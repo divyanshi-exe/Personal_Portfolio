@@ -1,0 +1,71 @@
+{% extends 'base.html' %} {% block content %}
+<section class="section">
+  <div class="container">
+    <h2 class="text-center mb-5">Contact</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <p class="lead text-center mb-4">
+          Feel free to reach out for collaborations or inquiries!
+        </p>
+        <!-- Contact Form -->
+        <form method="POST" action="{{ url_for('contact') }}">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              name="name"
+              placeholder="Your Name"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              placeholder="your.email@example.com"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea
+              class="form-control"
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Your message..."
+              required
+            ></textarea>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-custom">Send Message</button>
+          </div>
+        </form>
+        <!-- Social Media Links -->
+        <div class="text-center mt-4">
+          <p class="lead mb-3">Connect with me:</p>
+          <a
+            href="https://github.com/yourusername"
+            class="text-white mx-3"
+            target="_blank"
+          >
+            <i class="bi bi-github" style="font-size: 1.5rem"></i>
+          </a>
+          <a
+            href="https://linkedin.com/in/yourusername"
+            class="text-white mx-3"
+            target="_blank"
+          >
+            <i class="bi bi-linkedin" style="font-size: 1.5rem"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

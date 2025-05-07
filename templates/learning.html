@@ -1,0 +1,98 @@
+{% extends 'base.html' %} {% block content %}
+<section class="section">
+  <div class="bubbles"></div>
+  <div class="container">
+    <h2 class="text-center mb-5 about-heading">Learning Videos</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-6 text-center">
+        <a
+          href="#"
+          class="btn btn-custom mb-4"
+          data-bs-toggle="modal"
+          data-bs-target="#updateLearningModal"
+          >Add Learning Video</a
+        >
+      </div>
+    </div>
+    <!-- Video Grid -->
+    <div class="row justify-content-center">
+      {% for video in videos %}
+      <div class="col-md-4 mb-4">
+        <div class="video-container">
+          <video controls class="rounded video-item">
+            <source
+              src="{{ url_for('static', filename=video.video) }}"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-tag">{{ video.topic }}</div>
+          <form
+            action="{{ url_for('delete_learning', index=loop.index0) }}"
+            method="GET"
+            class="mt-2"
+          >
+            <button type="submit" class="btn btn-delete">Delete</button>
+          </form>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Modal for Add Learning Video -->
+<div
+  class="modal fade"
+  id="updateLearningModal"
+  tabindex="-1"
+  aria-labelledby="updateLearningModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-header">
+        <h5 class="modal-title" id="updateLearningModalLabel">
+          Add Learning Video
+        </h5>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form
+          method="POST"
+          action="{{ url_for('learning') }}"
+          enctype="multipart/form-data"
+        >
+          <div class="mb-3">
+            <label for="topic" class="form-label">Topic Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="topic"
+              name="topic"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="video" class="form-label">Upload Video</label>
+            <input
+              type="file"
+              class="form-control"
+              id="video"
+              name="video"
+              accept="video/*"
+              required
+            />
+          </div>
+          <button type="submit" class="btn btn-custom">Upload</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
