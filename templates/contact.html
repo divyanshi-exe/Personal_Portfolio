@@ -1,152 +1,68 @@
 {% extends 'base.html' %} {% block content %}
-<section class="hero-section">
-  <div class="bubbles"></div>
+<section class="section">
   <div class="container">
-    <div class="row align-items-center">
-      <div class="col-12 text-center">
-        <h1 class="mb-3">
-          <span class="intro-text">Hello, my name is</span><br />
-          <span class="name-text">Divyanshi Shah</span>
-        </h1>
-        <p class="lead my-4">
-          And I'm a <span id="role-text" class="role-text"></span>
-        </p>
-        <a href="{{ url_for('profile_sheet') }}" class="btn btn-video">SHEET</a>
-        <a href="{{ url_for('learning') }}" class="btn btn-video">LEARNING</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="about" class="section">
-  <div class="bubbles"></div>
-  <div class="container">
-    <h2 class="text-center mb-5 about-heading">About Me</h2>
-    <div class="row align-items-center">
+    <h2 class="text-center mb-5">Contact</h2>
+    <div class="row justify-content-center">
       <div class="col-md-6">
-        <img
-          src="{{ url_for('static', filename='src/image1.jpg') }}"
-          alt="Profile"
-          class="img-fluid hero-image"
-        />
-      </div>
-      <div class="col-md-6 about-content-col">
-        <div class="about-content">
-          <p class="lead text-md-start">
-            I'm ambitious and driven. I thrive on challenge and constantly set
-            goals for myself, so I have something to strive towards. I'm not
-            comfortable with settling, and I'm always looking for an opportunity
-            to do better and achieve greatness. Being a Tech-Enthusiast I am
-            always up to developing my Tech Stacks, so as to build reliable and
-            feasible projects for making everyday life's, even more, easier than
-            it's now. And also looking forward to collaborating on different
-            valuable projects that can heal the various vulnerabilities.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="skills" class="section">
-  <div class="bubbles"></div>
-  <div class="container">
-    <h2 class="text-center mb-5 about-heading">My Skills</h2>
-    <div class="row">
-      <!-- Skill 1 -->
-      <div class="col-md-4 text-center skill-item">
-        <div class="skill-container">
-          <img
-            src="{{ url_for('static', filename='src/skill1.jpg') }}"
-            alt="Skill 1"
-            class="img-fluid skill-image"
-          />
-          <div class="skill-name">Pandas</div>
-        </div>
-      </div>
-      <!-- Skill 2 -->
-      <div class="col-md-4 text-center skill-item">
-        <div class="skill-container">
-          <img
-            src="{{ url_for('static', filename='src/skill2.png') }}"
-            alt="Skill 2"
-            class="img-fluid skill-image"
-          />
-          <div class="skill-name">CSS</div>
-        </div>
-      </div>
-      <!-- Skill 3 -->
-      <div class="col-md-4 text-center skill-item">
-        <div class="skill-container">
-          <img
-            src="{{ url_for('static', filename='src/skill3.png') }}"
-            alt="Skill 3"
-            class="img-fluid skill-image"
-          />
-          <div class="skill-name">Html</div>
-        </div>
-      </div>
-      <!-- Skill 4 -->
-      <div class="col-md-4 text-center skill-item">
-        <div class="skill-container">
-          <img
-            src="{{ url_for('static', filename='src/skill4.png') }}"
-            alt="Skill 4"
-            class="img-fluid skill-image"
-          />
-          <div class="skill-name">Java Script</div>
-        </div>
-      </div>
-      <!-- Skill 5 -->
-      <div class="col-md-4 text-center skill-item">
-        <div class="skill-container">
-          <img
-            src="{{ url_for('static', filename='src/skill5.png') }}"
-            alt="Skill 5"
-            class="img-fluid skill-image"
-          />
-          <div class="skill-name">C++</div>
-        </div>
-      </div>
-      <!-- Skill 6 -->
-      <div class="col-md-4 text-center skill-item">
-        <div class="skill-container">
-          <img
-            src="{{ url_for('static', filename='src/skill6.jpg') }}"
-            alt="Skill 6"
-            class="img-fluid skill-image"
-          />
-          <div class="skill-name">Python</div>
-        </div>
-      </div>
-      <div class="col-md-4 text-center skill-item">
-        <div class="skill-container">
-          <img
-            src="{{ url_for('static', filename='src/skill7.jpg') }}"
-            alt="Skill 7"
-            class="img-fluid skill-image"
-          />
-          <div class="skill-name">SQL</div>
-        </div>
-      </div>
-      <div class="col-md-4 text-center skill-item">
-        <div class="skill-container">
-          <img
-            src="{{ url_for('static', filename='src/skill8.png') }}"
-            alt="Skill 8"
-            class="img-fluid skill-image"
-          />
-          <div class="skill-name">Matplotlib</div>
-        </div>
-      </div>
-      <div class="col-md-4 text-center skill-item">
-        <div class="skill-container">
-          <img
-            src="{{ url_for('static', filename='src/skill9.png') }}"
-            alt="Skill 9"
-            class="img-fluid skill-image"
-          />
-          <div class="skill-name">NumPy</div>
+        <p class="lead text-center mb-4">
+          Feel free to reach out for collaborations or inquiries!
+        </p>
+        <!-- Contact Form -->
+        <form method="POST" action="{{ url_for('contact') }}">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              name="name"
+              placeholder="Your Name"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              placeholder="your.email@example.com"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea
+              class="form-control"
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Your message..."
+              required
+            ></textarea>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-custom">Send Message</button>
+          </div>
+        </form>
+        <!-- Social Media Links -->
+        <div class="text-center mt-4">
+          <p class="lead mb-3">Connect with me:</p>
+          <a
+            href="https://github.com/divyanshi-exe"
+            class="text-white mx-3"
+            target="_blank"
+          >
+            <i class="bi bi-github" style="font-size: 1.5rem"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/divyanshi-shah-022430318/"
+            class="text-white mx-3"
+            target="_blank"
+          >
+            <i class="bi bi-linkedin" style="font-size: 1.5rem"></i>
+          </a>
         </div>
       </div>
     </div>
