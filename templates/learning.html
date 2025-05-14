@@ -3,96 +3,86 @@
   <div class="bubbles"></div>
   <div class="container">
     <h2 class="text-center mb-5 about-heading">Learning Videos</h2>
-    <div class="row justify-content-center">
-      <div class="col-md-6 text-center">
-        <a
-          href="#"
-          class="btn btn-custom mb-4"
-          data-bs-toggle="modal"
-          data-bs-target="#updateLearningModal"
-          >Add Learning Video</a
-        >
-      </div>
-    </div>
     <!-- Video Grid -->
     <div class="row justify-content-center">
-      {% for video in videos %}
-      <div class="col-md-4 mb-4">
+      <!-- Topic 1 -->
+      <div class="col-12 mb-4">
         <div class="video-container">
-          <video controls class="rounded video-item">
-            <source
-              src="{{ url_for('static', filename=video.video) }}"
-              type="video/mp4"
-            />
-            Your browser does not support the video tag.
-          </video>
-          <div class="video-tag">{{ video.topic }}</div>
-          <form
-            action="{{ url_for('delete_learning', index=loop.index0) }}"
-            method="GET"
-            class="mt-2"
-          >
-            <button type="submit" class="btn btn-delete">Delete</button>
-          </form>
+          <div class="video-tag">
+            <div class="video-label">
+              <span class="label-blue">Group Discussion</span><br />Group
+              Discussion (GD) is a structured form of discussion used to
+              evaluate participants on communication skills, teamwork,
+              leadership, critical thinking, and awareness of current issues.
+              GDs can be of various types such as topic-based (factual,
+              abstract, or controversial), case-based, or task-oriented. To
+              perform well, one should be well-informed, confident, and
+              respectful during the discussion. Do's in a GD include staying
+              relevant, listening actively, speaking clearly, and encouraging
+              others, while don’ts include interrupting, dominating the
+              discussion, or going off-topic. Generating ideas in a GD can be
+              easier if you break the topic into parts (social, economic,
+              political), use examples, and apply frameworks like SWOT
+              (Strengths, Weaknesses, Opportunities, Threats) or PESTLE
+              (Political, Economic, Social, Technological, Legal, Environmental)
+              for structured thinking.
+              <br />
+              <br />
+            </div>
+            <a
+              href="https://drive.google.com/file/d/1I2n1uN7NUjpUicB0DNi3RQ79J9ZaZ98I/view?usp=drivesdk"
+              target="_blank"
+              class="btn btn-watch"
+              >Watch1</a
+            >
+            <a
+              href="https://drive.google.com/file/d/1dbTMyKitzDD8llXUqiREVlqeVHkY2IGR/view?usp=drivesdk"
+              target="_blank"
+              class="btn btn-watch"
+              >Watch2</a
+            >
+          </div>
         </div>
       </div>
-      {% endfor %}
+      <!-- Topic 2 -->
+      <div class="col-12 mb-4">
+        <div class="video-container">
+          <div class="video-tag">
+            <div class="video-label">
+              <span class="label-blue">Presentation</span><br />Participating in
+              the SpeedTrack shoe pitch presentation was a memorable and
+              confidence-building experience for me. Working with my teammates
+              to create a strong, marketable pitch helped me understand the
+              power of collaboration and clear communication. During the
+              presentation, I had the opportunity to speak in front of an
+              audience, explain our product features, and persuade listeners
+              about what made SpeedTrack shoes unique. This challenged me to
+              improve my voice modulation, body language, and clarity of
+              thought. I also learned how to handle pressure while staying
+              composed and professional. As a result, this experience
+              significantly improved my verbal ability, enhanced my public
+              speaking confidence, and taught me how to deliver messages with
+              impact—skills that are essential for both academic
+              and career success.
+              <br />
+              <br />
+            </div>
+            <a
+              href="https://drive.google.com/file/d/1ocMz0xBjBrHBVnOMG6weubSpQh-Tw8L6/view?usp=drivesdk"
+              target="_blank"
+              class="btn btn-watch"
+              >Watch1</a
+            >
+            <a
+              href="https://drive.google.com/file/d/1P0rh-gm_l8iDdGK7Sk9ndNxm2oDv6WNa/view?usp=drivesdk"
+              target="_blank"
+              class="btn btn-watch"
+              >Watch2</a
+            >
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
-
-<!-- Modal for Add Learning Video -->
-<div
-  class="modal fade"
-  id="updateLearningModal"
-  tabindex="-1"
-  aria-labelledby="updateLearningModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog">
-    <div class="modal-content bg-dark text-white">
-      <div class="modal-header">
-        <h5 class="modal-title" id="updateLearningModalLabel">
-          Add Learning Video
-        </h5>
-        <button
-          type="button"
-          class="btn-close btn-close-white"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        ></button>
-      </div>
-      <div class="modal-body">
-        <form
-          method="POST"
-          action="{{ url_for('learning') }}"
-          enctype="multipart/form-data"
-        >
-          <div class="mb-3">
-            <label for="topic" class="form-label">Topic Name</label>
-            <input
-              type="text"
-              class="form-control"
-              id="topic"
-              name="topic"
-              required
-            />
-          </div>
-          <div class="mb-3">
-            <label for="video" class="form-label">Upload Video</label>
-            <input
-              type="file"
-              class="form-control"
-              id="video"
-              name="video"
-              accept="video/*"
-              required
-            />
-          </div>
-          <button type="submit" class="btn btn-custom">Upload</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
 {% endblock %}

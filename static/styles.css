@@ -265,15 +265,78 @@ body {
   }
 }
 
+/* Movie Review Styles */
+.movie-thumbnail {
+  max-height: 400px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #1e90ff;
+  transition: transform 0.3s ease;
+}
+
+.movie-thumbnail:hover {
+  transform: scale(1.05);
+}
+
+.movie-details {
+  background-color: #000000;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+  font-size: 1.2rem;
+}
+
+/* Reduce gap between thumbnail and details */
+.movie-review-row .col-md-6 {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.review-subheading {
+  font-size: 1.5rem;
+  color: #1e90ff;
+  margin-bottom: 15px;
+  text-shadow: 0 0 5px #1e90ff;
+}
+
+.review-content {
+  background-color: #000000;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.review-content ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.review-content ul li {
+  margin-bottom: 10px;
+}
+
+.review-content ul li strong {
+  color: #1e90ff;
+}
+
+.blockquote {
+  border-left: 4px solid #1e90ff;
+  padding-left: 15px;
+  margin: 0 0 15px 0;
+  font-style: italic;
+}
+
 /* Video Grid Styles */
 .video-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch; /* Stretch to full width */
+  min-height: 100px; /* Adjusted height for better fit */
 }
 
 .video-item {
-  width: 350px;
+  width: 100%;
   height: 250px;
   object-fit: contain;
   box-shadow: 0 0 15px #1e90ff;
@@ -286,22 +349,58 @@ body {
 }
 
 .video-tag {
-  width: 350px;
   background-color: #000000;
   color: #ffffff;
-  padding: 5px 15px;
+  padding: 15px 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
   font-size: 1rem;
   font-weight: bold;
-  text-align: center;
-  margin-top: 10px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  position: relative; /* For absolute positioning of the button */
+  width: 100%;
+  min-height: 80px; /* Increased height to accommodate multiple buttons */
 }
 
-/* Delete Button Styles */
+.video-label {
+  display: block; /* Changed to block to prevent text wrapping issues */
+  font-weight: normal; /* Adjusted for better readability */
+}
+
+/* Label Styling */
+.label-blue {
+  color: #1e90ff; /* Blue color matching the theme */
+}
+
+/* Watch Button Styles */
+.btn-watch {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 6px 20px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-align: center;
+  position: absolute;
+  bottom: 10px;
+  right: 10px; /* Default to the "last" position */
+}
+
+/* Position Watch1 and Watch2 side by side when both exist */
+.video-tag .btn-watch:nth-last-child(2) {
+  right: 100px; /* Watch1, positioned before Watch2 */
+}
+
+.video-tag .btn-watch:last-child {
+  right: 10px; /* Watch2 or single Watch1, the "last" position */
+}
+
+.btn-watch:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Delete Button Styles (not used but kept for reference) */
 .btn-delete {
   background-color: #ff4444;
   color: #ffffff;
@@ -314,4 +413,87 @@ body {
 
 .btn-delete:hover {
   background-color: #cc0000;
+}
+
+/* Cursor Trailing Ball Effect */
+.cursor-ball {
+  width: 40px; /* Increased size */
+  height: 40px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.05)
+  ); /* Reduced intensity */
+  border: 1px solid rgba(255, 255, 255, 0.5); /* Softer border */
+  border-radius: 50%; /* Make it a circle */
+  position: absolute; /* Position it relative to the page */
+  pointer-events: none; /* Prevent interference with clicks */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
+    0 0 15px rgba(30, 144, 255, 0.2); /* Softer glow */
+  transition: transform 0.2s ease, left 0.05s ease, top 0.05s ease; /* Smooth movement */
+  z-index: 9999; /* Ensure it appears above other elements */
+  animation: colorChange 8s infinite ease-in-out; /* Color change animation */
+}
+
+/* Color-changing animation */
+@keyframes colorChange {
+  0% {
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.05)
+    );
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
+      0 0 15px rgba(255, 255, 255, 0.2);
+  }
+  25% {
+    background: radial-gradient(
+      circle,
+      rgba(135, 206, 235, 0.3),
+      rgba(135, 206, 235, 0.05)
+    ); /* Light blue */
+    border-color: rgba(135, 206, 235, 0.5);
+    box-shadow: 0 0 10px rgba(135, 206, 235, 0.5),
+      0 0 15px rgba(135, 206, 235, 0.2);
+  }
+  50% {
+    background: radial-gradient(
+      circle,
+      rgba(30, 144, 255, 0.3),
+      rgba(30, 144, 255, 0.05)
+    ); /* Sea blue */
+    border-color: rgba(30, 144, 255, 0.5);
+    box-shadow: 0 0 10px rgba(30, 144, 255, 0.5),
+      0 0 15px rgba(30, 144, 255, 0.2);
+  }
+  75% {
+    background: radial-gradient(
+      circle,
+      rgba(169, 169, 169, 0.3),
+      rgba(169, 169, 169, 0.05)
+    ); /* Gray */
+    border-color: rgba(169, 169, 169, 0.5);
+    box-shadow: 0 0 10px rgba(169, 169, 169, 0.5),
+      0 0 15px rgba(169, 169, 169, 0.2);
+  }
+  100% {
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.05)
+    );
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
+      0 0 15px rgba(255, 255, 255, 0.2);
+  }
+}
+
+/* Scaling effect on hover over interactive elements */
+a:hover ~ .cursor-ball,
+button:hover ~ .cursor-ball,
+.btn-custom:hover ~ .cursor-ball,
+.btn-video:hover ~ .cursor-ball,
+.btn-watch:hover ~ .cursor-ball {
+  transform: scale(1.5); /* Enlarge the ball on hover */
 }

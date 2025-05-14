@@ -20,7 +20,7 @@ def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 @app.route('/')
-def home():
+def index():  # Renamed from 'home' to 'index' to match base.html
     return render_template('index.html')
 
 @app.route('/profile_sheet', methods=['GET', 'POST'])
@@ -74,6 +74,10 @@ def delete_learning(index):
             os.remove(full_path)
         learning_videos.pop(index)
     return redirect(url_for('learning'))
+
+@app.route('/movie_review')
+def movie_review():
+    return render_template('movie_review.html')
 
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():

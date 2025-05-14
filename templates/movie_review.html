@@ -1,0 +1,145 @@
+{% extends 'base.html' %} {% block content %}
+<section id="movie-review" class="section">
+  <div class="bubbles"></div>
+  <div class="container">
+    <h2 class="text-center mb-5 about-heading">
+      Movie Review: Dead Poets Society (1989)
+    </h2>
+    <div class="row align-items-center">
+      <!-- Thumbnail and Trailer Link -->
+      <div class="col-md-6">
+        <a
+          href="https://youtu.be/ye4KFyWu2do?si=c8fRU_EkORN1HT4z"
+          target="_blank"
+        >
+          <img
+            src="{{ url_for('static', filename='src/thumbnail2.webp') }}"
+            alt="Dead Poets Society Thumbnail"
+            class="img-fluid movie-thumbnail"
+          />
+        </a>
+      </div>
+      <!-- Movie Details -->
+      <div class="col-md-6">
+        <div class="movie-details">
+          <p><strong>Directed by:</strong> Peter Weir</p>
+          <p>
+            <strong>Starring:</strong> Robin Williams, Robert Sean Leonard,
+            Ethan Hawke
+          </p>
+          <a
+            href="https://youtu.be/ye4KFyWu2do?si=c8fRU_EkORN1HT4z"
+            target="_blank"
+            class="btn btn-video"
+            >Watch Trailer</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Favorite Dialogue -->
+    <div class="row mt-5">
+      <div class="col-12">
+        <h3 class="review-subheading">1) Your Favourite Dialogue and Why?</h3>
+        <div class="review-content">
+          <blockquote class="blockquote">
+            <p>
+              "Carpe Diem. Seize the day, boys. Make your lives extraordinary."
+            </p>
+          </blockquote>
+          <p>
+            This quote stands out because it's the central message of the movie.
+            It encourages students—and all of us—to live fully, make bold
+            choices, and not be confined by societal expectations. It reminds me
+            that time is fleeting, and we should make the most of every
+            opportunity.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Personal Review -->
+    <div class="row mt-5">
+      <div class="col-12">
+        <h3 class="review-subheading">2) Your Personal Review</h3>
+        <div class="review-content">
+          <p>
+            Dead Poets Society is a beautifully crafted film that explores the
+            clash between conformity and individuality in a strict boarding
+            school. Robin Williams shines as Mr. Keating, an English teacher who
+            inspires his students to think for themselves and embrace poetry,
+            creativity, and self-expression. The emotional depth, strong
+            performances, and poetic storytelling make it a timeless classic.
+            The film made me reflect on the importance of passion in education
+            and the courage it takes to stand up for your beliefs.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Learning to Take Away -->
+    <div class="row mt-5">
+      <div class="col-12">
+        <h3 class="review-subheading">
+          3) Learning to Take Away from the Movie
+        </h3>
+        <div class="review-content">
+          <ul>
+            <li>
+              <strong>Value of Individuality:</strong> Always think
+              independently and don’t just follow the crowd.
+            </li>
+            <li>
+              <strong>Importance of Passionate Teaching:</strong> Great teachers
+              can change lives by inspiring curiosity and confidence.
+            </li>
+            <li>
+              <strong>Living Authentically:</strong> It’s important to pursue
+              what truly matters to us, not just what others expect.
+            </li>
+            <li>
+              <strong>Voice Matters:</strong> Everyone deserves to be heard and
+              express their own thoughts and feelings.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Related Concepts -->
+    <div class="row mt-5">
+      <div class="col-12">
+        <h3 class="review-subheading">
+          4) Related Concepts You've Learned in the Classroom
+        </h3>
+        <div class="review-content">
+          <ul>
+            <li>
+              <strong>Communication and Self-Expression:</strong> Just as we
+              learn about expressing ideas clearly, the movie emphasizes the
+              power of words and poetry.
+            </li>
+            <li>
+              <strong>Critical Thinking:</strong> Mr. Keating encourages the
+              boys to analyze literature deeply and form their own
+              interpretations—similar to what we’re taught in language and
+              humanities classes.
+            </li>
+            <li>
+              <strong>Moral Courage:</strong> The film connects to ethical
+              discussions in subjects like Social Studies or Value Education,
+              where standing up for what's right is a key theme.
+            </li>
+            <li>
+              <strong>Leadership and Influence:</strong> Mr. Keating’s
+              leadership style shows how influence can be positive and
+              transformative, tying into discussions from psychology or
+              leadership studies.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

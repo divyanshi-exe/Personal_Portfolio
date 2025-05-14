@@ -11,10 +11,8 @@
         <p class="lead my-4">
           And I'm a <span id="role-text" class="role-text"></span>
         </p>
-        <a href="{{ url_for('profile_sheet') }}" class="btn btn-custom"
-          >SHEET</a
-        >
-        <a href="{{url_for('learning')}}" class="btn btn-video">PLAY VIDEO</a>
+        <a href="{{ url_for('profile_sheet') }}" class="btn btn-video">SHEET</a>
+        <a href="{{ url_for('learning') }}" class="btn btn-video">LEARNING</a>
       </div>
     </div>
   </div>
@@ -27,7 +25,7 @@
     <div class="row align-items-center">
       <div class="col-md-6">
         <img
-          src="{{ url_for('static', filename='src/image.jpg') }}"
+          src="{{ url_for('static', filename='src/image1.jpg') }}"
           alt="Profile"
           class="img-fluid hero-image"
         />

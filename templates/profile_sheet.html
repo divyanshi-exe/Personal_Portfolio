@@ -3,94 +3,372 @@
   <div class="bubbles"></div>
   <div class="container">
     <h2 class="text-center mb-5 about-heading">Profile Sheet</h2>
-    <div class="row justify-content-center">
-      <div class="col-md-6 text-center">
-        <a
-          href="#"
-          class="btn btn-custom mb-4"
-          data-bs-toggle="modal"
-          data-bs-target="#updateSheetModal"
-          >Update Sheet</a
-        >
-      </div>
-    </div>
     <!-- Video Grid -->
     <div class="row justify-content-center">
-      {% for sheet in sheets %}
-      <div class="col-md-4 mb-4">
+      <!-- Q1 -->
+      <div class="col-12 mb-4">
         <div class="video-container">
-          <video controls class="rounded video-item">
-            <source
-              src="{{ url_for('static', filename=sheet.video) }}"
-              type="video/mp4"
-            />
-            Your browser does not support the video tag.
-          </video>
-          <div class="video-tag">{{ sheet.question }}</div>
-          <form
-            action="{{ url_for('delete_profile_sheet', index=loop.index0) }}"
-            method="GET"
-            class="mt-2"
-          >
-            <button type="submit" class="btn btn-delete">Delete</button>
-          </form>
+          <div class="video-tag">
+            <div class="video-label">
+              <span class="label-blue"></span>Introduction
+            </div>
+            <a
+              href="https://drive.google.com/file/d/1UndFjU5hzmkjPpxGZnN2iVBtyfuPtN6Y/view?usp=drivesdk "
+              target="_blank"
+              class="btn btn-watch"
+              >Watch</a
+            >
+          </div>
         </div>
       </div>
-      {% endfor %}
+      <!-- Q2 -->
+      <div class="col-12 mb-4">
+        <div class="video-container">
+          <div class="video-tag">
+            <div class="video-label">
+              <span class="label-blue">Q.1: </span>Write your career objective.
+            </div>
+            <a
+              href="https://drive.google.com/file/d/1Cxuu0tmjsQ1kCsd8i3jnIvSEvCHVbLp3/view?usp=drivesdk "
+              target="_blank"
+              class="btn btn-watch"
+              >Watch</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- Q3 -->
+      <div class="col-12 mb-4">
+        <div class="video-container">
+          <div class="video-tag">
+            <div class="video-label">
+              <span class="label-blue">Q.2: </span>Why do you want to be an
+              engineer? Elaborate reasons.
+            </div>
+            <a
+              href="https://drive.google.com/file/d/1DJIhWbyIeQZ-p-BjHL-T7rvgmJNg1wE0/view?usp=drivesdk"
+              target="_blank"
+              class="btn btn-watch"
+              >Watch</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- Q4 -->
+      <div class="col-12 mb-4">
+        <div class="video-container">
+          <div class="video-tag">
+            <div class="video-label">
+              <span class="label-blue">Q.3: </span>Write about projects or
+              internship you have done/ are doing along with the learning.
+            </div>
+            <a
+              href="https://drive.google.com/file/d/1HeE_LGjcG_WVLpydHELBPQ0hbKHXoOHv/view?usp=drivesdk "
+              target="_blank"
+              class="btn btn-watch"
+              >Watch</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- Q5 -->
+      <div class="col-12 mb-4">
+        <div class="video-container">
+          <div class="video-tag">
+            <div class="video-label">
+              <span class="label-blue">Q.4: </span>What would you consider a
+              significant achievement in your life and why?
+            </div>
+            <a
+              href="https://drive.google.com/file/d/1UjtdYJkJIexcaDZepiUf7CSQeCYNxS4k/view?usp=drivesdk"
+              target="_blank"
+              class="btn btn-watch"
+              >Watch</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- Q6 -->
+      <div class="col-12 mb-4">
+        <div class="video-container">
+          <div class="video-tag">
+            <div class="video-label">
+              <span class="label-blue">Q.5: </span>Write about a failure of
+              yours which you consider to share. What have you learned from it?
+            </div>
+            <a
+              href="https://drive.google.com/file/d/1J0XavlMces_KiOpY58-jhL-19ZRUVhhG/view?usp=drivesdk "
+              target="_blank"
+              class="btn btn-watch"
+              >Watch</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- Q7 -->
+      <div class="col-12 mb-4">
+        <div class="video-container">
+          <div class="video-tag">
+            <div class="video-label">
+              <span class="label-blue">Q.6: </span>What are your strengths?
+              Write one or two instances where you have demonstrated your
+              strengths.
+            </div>
+            <a
+              href="https://drive.google.com/file/d/1e5KoxU67LXDbvnK-L5uhJ9bxagkooDNj/view?usp=drivesdk "
+              target="_blank"
+              class="btn btn-watch"
+              >Watch</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- Q8 -->
+      <div class="col-12 mb-4">
+        <div class="video-container">
+          <div class="video-tag">
+            <div class="video-label">
+              <span class="label-blue">Q.7: </span>Write about your weaknesses.
+              What are you doing to overcome your weaknesses?
+            </div>
+            <a
+              href="https://drive.google.com/file/d/1FW7TVcYJSAm-uQ4DDpAKCXiNmm5V6xUY/view?usp=drivesdk "
+              target="_blank"
+              class="btn btn-watch"
+              >Watch</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- Q9 -->
+      <div class="col-12 mb-4">
+        <div class="video-container">
+          <div class="video-tag">
+            <div class="video-label">
+              <span class="label-blue">Q.8: </span>What is the most difficult
+              moment that you have faced in your life so far? What qualities
+              helped you to overcome the moment?
+            </div>
+            <a
+              href="https://drive.google.com/file/d/1Uybhz5znUsdJH6FYhJrhPtc9s4MFiNU1/view?usp=drivesdk "
+              target="_blank"
+              class="btn btn-watch"
+              >Watch</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- Q10 -->
+      <div class="col-12 mb-4">
+        <div class="video-container">
+          <div class="video-tag">
+            <div class="video-label">
+              <span class="label-blue">Q.9: </span>Apart from academics, what
+              else are you interested in? Make a separate list in terms of
+              extracurricular activities, sports and any other interests.
+            </div>
+            <a
+              href="https://drive.google.com/file/d/1GA0hd3YC-H7PEH3pyWTotXWU71Uvds8H/view?usp=drivesdk "
+              target="_blank"
+              class="btn btn-watch"
+              >Watch</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- Q11 -->
+      <div class="col-12 mb-4">
+        <div class="video-container">
+          <div class="video-tag">
+            <div class="video-label">
+              <span class="label-blue">Q.10: </span>Give an example of an area,
+              concept or thing that you are absolutely passionate about.
+            </div>
+            <a
+              href="https://drive.google.com/file/d/16r5zQD87PuVk8TmyGMjgZX5RP6oLvH0o/view?usp=drivesdk "
+              target="_blank"
+              class="btn btn-watch"
+              >Watch</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- Q12 -->
+      <div class="col-12 mb-4">
+        <div class="video-container">
+          <div class="video-tag">
+            <div class="video-label">
+              <span class="label-blue">Q.11: </span>Describe yourself as an
+              individual in 5 lines.
+            </div>
+            <a
+              href="https://drive.google.com/file/d/1MRfNbK5m22b1XOT0y2wmjeVMLFymmBMt/view?usp=drivesdk"
+              target="_blank"
+              class="btn btn-watch"
+              >Watch</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- Q13 -->
+      <div class="col-12 mb-4">
+        <div class="video-container">
+          <div class="video-tag">
+            <div class="video-label">
+              <span class="label-blue">Q.12: </span>What kinds of people do you
+              enjoy working with?
+            </div>
+            <a
+              href="https://drive.google.com/file/d/1H57DTTDtcy55XblmxmYKqp9akBacG5Cw/view?usp=drivesdk "
+              target="_blank"
+              class="btn btn-watch"
+              >Watch</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- Q14 -->
+      <div class="col-12 mb-4">
+        <div class="video-container">
+          <div class="video-tag">
+            <div class="video-label">
+              <span class="label-blue">Q.13: </span>What kinds of people you
+              don’t want to work with? What would you do if they became your
+              senior in your dream job?
+            </div>
+            <a
+              href="https://drive.google.com/file/d/1Owvkww4cA57_FlvMw3NiuLMkXuZLT8gg/view?usp=drivesdk "
+              target="_blank"
+              class="btn btn-watch"
+              >Watch</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- Q15 -->
+      <div class="col-12 mb-4">
+        <div class="video-container">
+          <div class="video-tag">
+            <div class="video-label">
+              <span class="label-blue">Q.14: </span>What do you expect from your
+              first job? Prioritize and write in order.
+            </div>
+            <a
+              href="https://drive.google.com/file/d/1yYL7IzlSyJ0kOyJmhFueTbsh7HTgU_Fk/view?usp=drivesdk"
+              target="_blank"
+              class="btn btn-watch"
+              >Watch</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- Q16 -->
+      <div class="col-12 mb-4">
+        <div class="video-container">
+          <div class="video-tag">
+            <div class="video-label">
+              <span class="label-blue">Q.15: </span>In the past year, what have
+              you been dissatisfied about in your performance?
+            </div>
+            <a
+              href="https://drive.google.com/file/d/1Ac_FVYNCQpZSSVU0sm3o_G168mcYBbA4/view?usp=drivesdk"
+              target="_blank"
+              class="btn btn-watch"
+              >Watch</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- Q17 -->
+      <div class="col-12 mb-4">
+        <div class="video-container">
+          <div class="video-tag">
+            <div class="video-label">
+              <span class="label-blue">Q.16: </span>Rate yourself out of 5 in
+              verbal communication. What are you doing to improve your
+              communication skills?
+            </div>
+            <a
+              href="https://drive.google.com/file/d/1fQPEyv-suP8GZ3kVLDaZkwFPPk4Zxr3j/view?usp=drivesdk"
+              target="_blank"
+              class="btn btn-watch"
+              >Watch</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- Q18 -->
+      <div class="col-12 mb-4">
+        <div class="video-container">
+          <div class="video-tag">
+            <div class="video-label">
+              <span class="label-blue">Q.17: </span>Who is your role model? What
+              qualities of that person you would like to see in your personality
+              and why?
+            </div>
+            <a
+              href="https://drive.google.com/file/d/1Hmu6wwZ1aBdzM3Kkg842vX0tkRm8eVGt/view?usp=drivesdk"
+              target="_blank"
+              class="btn btn-watch"
+              >Watch</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- Q19 -->
+      <div class="col-12 mb-4">
+        <div class="video-container">
+          <div class="video-tag">
+            <div class="video-label">
+              <span class="label-blue">Q.18: </span>Write a few lines about your
+              friends. Do you think they help/ may help you in achieving your
+              goals? If yes, how? If no, why do you accompany them?
+            </div>
+            <a
+              href="https://drive.google.com/file/d/1bYHcwsK0qJpdrjNE2fFUwdGneqXCnxVt/view?usp=drivesdk"
+              target="_blank"
+              class="btn btn-watch"
+              >Watch</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- Q20 -->
+      <div class="col-12 mb-4">
+        <div class="video-container">
+          <div class="video-tag">
+            <div class="video-label">
+              <span class="label-blue">Q.19: </span>Write 3 leadership
+              qualities. How many do you possess? Write an instance where you
+              have applied those qualities.
+            </div>
+            <a
+              href="https://drive.google.com/file/d/10VAvePSytgmaHiFRb3LfatdiQhXyiZw-/view?usp=drivesdk"
+              target="_blank"
+              class="btn btn-watch"
+              >Watch</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- Q21 -->
+      <div class="col-12 mb-4">
+        <div class="video-container">
+          <div class="video-tag">
+            <div class="video-label">
+              <span class="label-blue">Q.20: </span> So finally, tell us
+              something more about yourself or introduce yourself.
+            </div>
+            <a
+              href="https://drive.google.com/file/d/1mWLwtjAI2_gQuKi7lmLFfjyCNvbWFc64/view?usp=drivesdk"
+              target="_blank"
+              class="btn btn-watch"
+              >Watch</a
+            >
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
-
-<!-- Modal for Update Sheet -->
-<div
-  class="modal fade"
-  id="updateSheetModal"
-  tabindex="-1"
-  aria-labelledby="updateSheetModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog">
-    <div class="modal-content bg-dark text-white">
-      <div class="modal-header">
-        <h5 class="modal-title" id="updateSheetModalLabel">Update Sheet</h5>
-        <button
-          type="button"
-          class="btn-close btn-close-white"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        ></button>
-      </div>
-      <div class="modal-body">
-        <form
-          method="POST"
-          action="{{ url_for('profile_sheet') }}"
-          enctype="multipart/form-data"
-        >
-          <div class="mb-3">
-            <label for="question" class="form-label">Question</label>
-            <input
-              type="text"
-              class="form-control"
-              id="question"
-              name="question"
-              required
-            />
-          </div>
-          <div class="mb-3">
-            <label for="video" class="form-label">Upload Video</label>
-            <input
-              type="file"
-              class="form-control"
-              id="video"
-              name="video"
-              accept="video/*"
-              required
-            />
-          </div>
-          <button type="submit" class="btn btn-custom">Upload</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
 {% endblock %}
